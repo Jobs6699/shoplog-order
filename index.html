@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopLog 點餐系統</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    .button { padding: 10px 20px; margin: 10px 5px; background: black; color: white; border: none; cursor: pointer; }
+    .section { margin-top: 20px; }
+  </style>
 </head>
 <body>
-  <h1>歡迎使用 ShopLog 點餐系統</h1>
-  <p>此為初始測試頁面，實際功能請參考完整版本。</p>
+  <h1>ShopLog 點餐系統</h1>
+  <div class="section">
+    <h2>首頁選單</h2>
+    <button class="button">點餐</button>
+    <button class="button">歷史紀錄</button>
+    <button class="button">營業額</button>
+  </div>
+
+  <div class="section">
+    <h2>模擬畫面：選擇座位</h2>
+    <div id="tables"></div>
+  </div>
+
+  <script>
+    const tables = document.getElementById('tables');
+    for (let i = 1; i <= 8; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'button';
+      btn.textContent = `座位 ${i}`;
+      tables.appendChild(btn);
+    }
+  </script>
 </body>
 </html>
